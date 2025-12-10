@@ -1,0 +1,316 @@
+
+2 Tokens in Java
+
+	In programming, a token is the smallest individual unit of source code that is meaningful to a compiler or interpreter. It is a sequence of characters that represents a specific element in the program, such as a keyword, identifier, operator, literal, or punctuation symbol. 
+		Every Java program is made up of tokens.
+
+	Java has 6 types of tokens:
+
+		🔶 1. Keywords
+
+			These are predefined, reserved words in Java.
+			You cannot use them as variable names or method names.
+
+		✔ Examples
+			int, class, static, public, void, if, else, return, try, catch
+			✔ Example in code
+			class Student {
+				int age;
+			}
+
+		🔶 2. Identifiers
+
+			Names given by the programmer to:
+				Variables // A variable is a memory container used to store data values.
+				Methods
+				Classes
+				Objects
+				Interfaces
+
+			✔ Examples
+				age, sum, Student, calculateTotal()
+			✔ Rules
+			Cannot start with a number
+			Cannot use keywords
+			Case-sensitive
+			Can contain letters, digits, _, $
+
+		🔶 3. Literals
+
+		Constant values written directly in code.
+			✔ Types of literals
+
+			Integer literal → 10, 50
+			Floating literal → 12.5, 3.14f
+			Character literal → 'A', 'z'
+			String literal → "Hello"
+			Boolean literal → true, false
+			✔ Example
+			int x = 10;
+			String s = "Java";
+
+		🔶 4. Operators
+
+			Symbols used to perform operations.
+			✔ Types
+			Arithmetic → + - * / %
+			Relational → > < == !=
+			Logical → && || !
+			Assignment → = += -=
+			Increment / Decrement → ++ --
+			✔ Example
+			int a = 10 + 5;
+
+		🔶 5. Separators / Symbols
+
+			Characters used to separate code elements.
+			✔ Examples
+			Semicolon → ;
+			Comma → ,
+			Dot → .
+			Brackets → ()
+			Curly braces → {}
+			Square brackets → []
+			✔ Example
+			System.out.println("Hello");
+
+		🔶 6. Comments
+
+			Used to explain code.
+			Ignored by the compiler.
+			✔ Types
+			Single-line comment
+			// This is a comment
+			Multi-line comment
+			/*
+			   Multiple lines comment
+			*/
+			
+0.3 Java Keywords
+
+	Java has ~67 keywords.
+
+	Important Groups
+
+	Access Modifiers: public, private, protected
+	Class Related: class, interface, extends, implements
+	Flow Control: if, else, switch, case, default
+	Loop: for, while, do
+	Exception: try, catch, finally, throw, throws
+	Modifier: static, final, abstract, synchronized
+	Return: return, void
+	Object: new, super, this
+
+
+0.4 Operators (Complete)
+
+	Categories
+	Arithmetic – +, -, *, /, %
+	Relational – >, >=, <, <=, ==
+	Logical – &&, ||, !
+	Unary – ++, --, !
+	Bitwise – &, |, ^
+	Shift – <<, >>, >>>
+	Ternary – condition ? x : y
+	Instanceof – to check object type
+	
+0.5 Type Conversion
+	
+	Differences Between Widening and Narrowing
+	Feature		Widening		Narrowing
+	Conversion	Small → Big		Big → Small
+	Automatic	✔ Yes			✖ No
+	Data Loss	✖ No			✔ Yes (possible)
+	Syntax		automatic		requires cast (type)
+	
+	
+0.8 Packages & Access Modifiers
+	Types of Packages
+
+	Built-in: java.util, java.io
+
+	User-defined
+	Access modifiers
+	Modifier	Same Class	Same Package	Child Class		Other Package
+	public		✔	 		✔				✔				✔
+	protected	✔			✔				✔				✖
+	default		✔			✔				✖				✖
+	private		✔			✖				✖				✖
+	
+	
+0.9 Wrapper Classes
+
+	Used to convert primitive → object.
+
+		Examples
+		int → Integer
+		double → Double
+		boolean → Boolean
+		Autoboxing
+		Integer x = 10;
+		Unboxing
+		int y = x;
+		
+System.out.println() — Line-by-Line Explanation
+	1️⃣ System
+
+		System is a built-in class in Java.
+		It belongs to the java.lang package, so you don’t need to import it.
+		This class contains useful tools like:
+			in → for input
+			out → for output
+			err → for error messages
+
+	2️⃣ System.out
+
+		out is a static variable inside the System class.
+		It represents the standard output stream.
+		Means: whatever you print using out will go to
+		console / terminal / command prompt.
+
+	Technically:
+
+		out is an object of class PrintStream.
+		PrintStream has methods like:
+		print()
+		println()
+		printf()
+
+	3️⃣ System.out.println()
+
+		println() is a method of PrintStream.
+		It prints the message and moves cursor to the next line.
+
+	📌 Example:
+		System.out.println("Hello");
+		System.out.println("World");
+		Output:
+		Hello
+		World
+
+	(printed on two different lines)
+	
+	4️⃣ What println() actually does
+		Sends the text to the output stream (out)
+		Converts non-string values (int, float, boolean) to string
+		Adds a newline at the end (\n)
+		
+		
+		
+✅ Difference Between out, in, and err in Java
+	1️⃣ System.out — Standard Output Stream
+
+		Used to print normal messages to the console.
+		Example: results, logs, information, general output.
+		Type: PrintStream
+		Example:
+		System.out.println("Hello, Java!");
+
+	2️⃣ System.in — Standard Input Stream
+
+		Used to take input from the keyboard.
+		Type: InputStream
+		Works with classes like Scanner or BufferedReader.
+		Example:
+		Scanner sc = new Scanner(System.in);
+
+	3️⃣ System.err — Standard Error Stream
+
+		Used to print error messages.
+		Also prints to the console, but it's separate from normal output.
+		Helps identify errors easily.
+		Type: PrintStream (same as out)
+		
+		
+-------
+about main method	
+			
+	What is the main method in Java?
+
+		The main method is the starting point (entry point) of every Java program.
+		The main method is a public and static method that JVM calls first when the program starts, it returns nothing, and it can take extra input from the command-line.
+
+		Java always begins execution from:
+		public static void main(String[] args)
+
+	🔍 Line-by-Line Explanation
+	
+	1️⃣ public
+		public means anyone can access this method.
+		JVM must be able to access it, so it must be public.
+	➡ Without public, JVM cannot call your main method.
+
+	2️⃣ static
+
+		static means the method belongs to the class, not objects.
+		JVM can call it without creating an object of the class.
+	➡ If it was not static, JVM would need to create an object first — but JVM doesn’t do that.
+
+	3️⃣ void
+
+		void means the method does NOT return anything.
+		The main method does not give any output back to JVM.
+
+	➡ It only runs your code.
+
+	4️⃣ main
+
+		main is the name of the method.
+		JVM looks for this exact name to start the program.
+
+	➡ If you change the name, the program won't run.
+
+	5️⃣ (String[] args)
+
+		This is the parameter for the main method.
+		String[]
+			An array of Strings.
+		args
+			Variable name (can be anything like a, data, x).
+		It stores command-line arguments.
+
+	➡ If you run your program with extra values, they come inside args.
+
+	Example:
+		java MyClass hello 123
+	Then:
+		args[0] = "hello"
+		args[1] = "123"
+
+
+🟩 2️⃣ Stack Memory — Fast Working Table
+
+	Think of the stack as a small table where Java keeps things temporarily.
+	
+	What is stored in the Stack?
+		Local variables (inside methods)
+		Method calls (which method is running)
+		References (address of objects)
+		
+🟩 2️⃣ Heap Memory — Big Storage Room
+
+	Heap is like a large storage room where Java keeps all objects.
+
+	What is stored in the Heap?
+		Objects
+		Arrays
+		Class objects
+		Strings ( some in the String Pool )
+
+	Who manages Heap memory?
+	➡ Garbage Collector (GC)
+	
+🟨 3️⃣ Method Area / MetaSpace — Class Information Storage
+
+	This is the memory where Java stores information about classes.
+
+	What is stored in the Method Area?
+
+		Class names
+		Method names
+		Method code
+		Static variables
+		Constant Pool
+	✔ Managed by the JVM
+	✔ After Java 8, this area is called MetaSpace
+	✔ It can grow as needed using OS memory
